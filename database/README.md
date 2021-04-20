@@ -1,6 +1,5 @@
 # Crawler-Database
 
-Database tables and functions for Redback Crawler capstone project RMIT
 
 If you wish to set up the database from scratch you have two options:
 
