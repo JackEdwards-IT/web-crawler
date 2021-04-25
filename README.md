@@ -16,3 +16,9 @@ The backend was created around 6 months ago. Original repos can be found on my u
 This is predominantly a learning exercise for me and will be the first time I use Vue.js to create a dynamic SPA. I anticipate progress will be slow as I learn.
 
 Simple [Trello Board](https://trello.com/b/Rwrt0Uhr) to track progress.
+
+## API
+
+Postman API doc [Postman](https://www.getpostman.com/collections/5744d8c9c9425fa406a2)
+
+Note API endpoint links are out of date.
