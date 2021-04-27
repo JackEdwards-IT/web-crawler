@@ -13,6 +13,8 @@ Example:
 # .env
 NODE_ENV=development
 DB_NAME=""
+DB_HOST=""
+DB_PORT=""
 DB_PASSWORD=""
 DB_USERNAME=""
 JWT_SECRET=""
@@ -52,7 +54,7 @@ npm run start:dev
 ```sh
 npm run start:prod
 ```
-## Docker Container
+## Docker Container for local dev (Used by docker-compose for the full stack)
 
 A dockerfile has been provided based on the official node image. This image is provided as simple way to run up a the API for demonstration or use when
 developing/testing another element of the project that requires the API.
@@ -62,3 +64,5 @@ To run a containerised version:
 Build: `sudo docker build -t jack/node-crawler .`
 
 Run: `sudo docker run -d -p 3001:3001 jack/node-crawler`
+
+Check the Dockerfile for ENV variables if you need to change them.
