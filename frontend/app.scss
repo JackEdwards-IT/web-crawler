@@ -1,0 +1,11 @@
+// Bootstrap variables
+
+/* Noto Sans JP */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+$secondary: #26547c;
+$btn-border-radius: 3px;
+$btn-font-family: 'Noto Sans JP';
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
