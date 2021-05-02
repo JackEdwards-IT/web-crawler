@@ -22,3 +22,48 @@ Simple [Trello Board](https://trello.com/b/Rwrt0Uhr) to track progress.
 Postman API doc [Postman](https://www.getpostman.com/collections/5744d8c9c9425fa406a2)
 
 Note API endpoint links are out of date.
+
+## Local dev with Docker
+
+### API
+
+Build the dockerfile located in the backend folder. This is then utilised by docker compose.
+
+`docker build -t jack/node-crawler .`
+
+### Database
+
+Build the dockerfile located in the database folder and on first run load all the functions and tables into a new database. ENV variables for user and password are located in the Dockerfile for dev use only. 
+
+Build:
+
+`docker build -t jack/crawler-db .`
+
+
+### Docker Compose
+
+#### Intial Setup
+
+Once images are built for the API and Database the backend can be started using the docker compose file in the projects root directory. 
+
+On first run the database tables and functions will need to be manually added.
+(Note I have mapped to port 5430 to avoid conflict as I have a local pg server running)
+
+Connect to database
+`pgsql -h localhost -p 5430 -u jack -W`
+
+Create the database
+`create database crawler; `
+
+Change to the database
+`\c crawler `
+
+Enable pgcrypto for password hashing
+`create extension pgcrypto;`
+
+Now paste the data for the functions and tables found in the Database folder.
+
+#### Testing
+
+A demo test route is provided to check that the API and database are communicating.
+`GET http://localhost:3001/api/demo` returns a table from the db.

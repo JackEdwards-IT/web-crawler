@@ -1,0 +1,10 @@
+services:
+  db:
+    image: jack/crawler-db
+    ports: 
+      - 5430:5432
+
+  api:
+    image: jack/node-crawler
+    ports: 
+      - 3001:3001

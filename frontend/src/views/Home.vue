@@ -22,8 +22,14 @@
     <b-row>
       <b-col md="2"></b-col>
       <b-col md="8">
-        <b-button class="mr-2">Sign In</b-button>
+        <router-link to="/login">
+          <b-button class="mr-2">Sign In</b-button>
+        </router-link>
+
+        <router-link to="/register">
         <b-button>Register</b-button>
+        </router-link>
+
       </b-col>
       <b-col md="2"></b-col>
     </b-row>
