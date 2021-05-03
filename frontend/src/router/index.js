@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import Test from '../views/Test.vue'
 
 Vue.use(VueRouter)
 
@@ -15,12 +16,31 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta: {
+      guest: true
+    }
   },
   {
     path: '/register',
     name: 'Register',
-    component: Register
+    component: Register,
+    meta: {
+      guest: true
+    }
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    meta: {
+      requiresAuth: true
+    }
+  },
+
+  {
+    path: '/test',
+    name: 'Test',
+    component: Test
   },
   {
     path: '/about',
@@ -31,6 +51,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
+
+//!!!!!!!!!!!!!!!!!!!!!
+// https://www.digitalocean.com/community/tutorials/how-to-set-up-vue-js-authentication-and-route-handling-using-vue-router
 
 const router = new VueRouter({
   mode: 'history',

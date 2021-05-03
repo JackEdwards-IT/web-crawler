@@ -1,8 +1,8 @@
 <template>
     <b-container>
         <ul><nav>
-            <router-link to="/">Home</router-link>
-            <router-link to="/login">Login</router-link>
+            <router-link to="/" class="mr-2">Home</router-link>
+            <router-link to="/login" class="mr-2">Login</router-link>
         </nav></ul>
     </b-container>
 </template>

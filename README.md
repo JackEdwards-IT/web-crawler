@@ -61,7 +61,13 @@ Change to the database
 Enable pgcrypto for password hashing
 `create extension pgcrypto;`
 
-Now paste the data for the functions and tables found in the Database folder.
+Now paste in the data for the functions and tables found in the Database folder.
+
+Note the database storage is mapped to `${HOME}/crawler-db/` to ensure data is maintained.
+
+#### Running with Docker Compose
+
+`docker-compose up -d`
 
 #### Testing
 

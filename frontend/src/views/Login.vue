@@ -1,13 +1,13 @@
 <template>
     <b-container>
-        <h1>Login</h1>
+        <h2>Test</h2>
     </b-container>
 </template>
 
 <script>
 
 export default{
-    name: 'Login',
+    name: 'Test',
 }
 </script>
 

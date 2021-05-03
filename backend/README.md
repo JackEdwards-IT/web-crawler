@@ -23,9 +23,6 @@ FRONTEND_URL="https://redback-crawler.herokuapp.com"
 LH_URL="http://localhost:8080"
 ```
 
-Please log into Heroku and go to settings and reveal "config vars" to find the correct values to fill out the empty entries above or see project report development guide.
-
-
 ## Development
 
 Please note this is currently running on port 3001 in development mode (when you run it locally) and when accessing API routes you will need to reflect this.

@@ -7,9 +7,13 @@
 
 <script>
 import navbar from "@/components/Navbar.vue";
+
 export default {
   name: 'App',
-  components: { navbar: navbar },
+  components: { 
+    navbar: navbar
+    },
+
   computed: {
     showNavBar(){
     if (this.$route.path === "/"){

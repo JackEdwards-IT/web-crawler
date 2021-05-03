@@ -27,7 +27,11 @@
         </router-link>
 
         <router-link to="/register">
-        <b-button>Register</b-button>
+        <b-button class="mr-2">Register</b-button>
+        </router-link>
+
+         <router-link to="/test">
+        <b-button>Test API connection</b-button>
         </router-link>
 
       </b-col>

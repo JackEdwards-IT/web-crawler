@@ -1,6 +1,6 @@
 <template>
     <b-container>
-        <h1>Register</h1>
+        <h2>Register</h2>
     </b-container>
 </template>
 

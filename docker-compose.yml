@@ -3,6 +3,8 @@ services:
     image: jack/crawler-db
     ports: 
       - 5430:5432
+    volumes:
+      - ${HOME}/crawler-db/:/var/lib/postgresql/data
 
   api:
     image: jack/node-crawler
