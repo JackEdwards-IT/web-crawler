@@ -18,7 +18,6 @@
 
 <script>
 import TestComponent from "../components/TestComponent.vue";
-
 export default {
   name: "Test",
   components: {

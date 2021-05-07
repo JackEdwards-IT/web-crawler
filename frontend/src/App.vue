@@ -1,7 +1,7 @@
 <template>
   <b-container>
-  <navbar v-show="showNavBar"></navbar>
-  <router-view/>
+    <navbar v-show="showNavBar"></navbar>
+    <router-view />
   </b-container>
 </template>
 
@@ -9,36 +9,40 @@
 import navbar from "@/components/Navbar.vue";
 
 export default {
-  name: 'App',
-  components: { 
-    navbar: navbar
-    },
+  name: "App",
+  // created: function () {
+  //   if (this.$store.getters.isAuthenticated) {
+  //     this.$store.dispatch(USER_REQUEST);
+  //   }
+  // },
+  components: {
+    navbar: navbar,
+  },
 
   computed: {
-    showNavBar(){
-    if (this.$route.path === "/"){
-      return false;
-    } else {
-      return true;
-    }
-    }
-  }
+    showNavBar() {
+      if (this.$route.path === "/") {
+        return false;
+      } else {
+        return true;
+      }
+    },
+  },
 };
-
 </script>
 
 <style>
 /* Fonts */
 /* Zen Dots */
-@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
 /* Noto Sans JP */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
-h1{
-  font-family: 'Zen Dots';
+h1 {
+  font-family: "Zen Dots";
 }
 p {
-  font-family: 'Noto Sans JP';
+  font-family: "Noto Sans JP";
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

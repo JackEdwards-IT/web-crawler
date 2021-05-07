@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-
-// // Import Bootstrap an BootstrapVue CSS files (order is important)
-// import 'bootstrap/dist/css/bootstrap.css'
-// import 'bootstrap-vue/dist/bootstrap-vue.css'
-import '../app.scss'
 import router from './router'
+import store from "./store"
+
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import '../app.scss'
+
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
@@ -15,7 +14,11 @@ Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
 
+// API address
+Vue.prototype.$api = (Vue.config.productionTip) ? 'https://hostname' : 'http://localhost:3001/'
+
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
