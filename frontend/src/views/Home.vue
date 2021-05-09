@@ -34,6 +34,10 @@
         <b-button>Test API connection</b-button>
         </router-link>
 
+         <router-link to="/dashboard">
+        <b-button>User dashboard</b-button>
+        </router-link>
+
       </b-col>
       <b-col md="2"></b-col>
     </b-row>

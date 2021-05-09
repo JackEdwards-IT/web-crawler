@@ -13,14 +13,18 @@
         </div>
       </div>
       <div>
-        <button type="submit">Login</button>
+        <b-button type="submit">
+          <b-spinner small class="login"></b-spinner>
+          <span class="sr-only">Login</span>
+        </b-button>
+        <b-alert variant="danger" :show="error">Problem with login.</b-alert>
       </div>
     </form>
   </b-container>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
   name: "login",
@@ -28,6 +32,7 @@ export default {
     return {
        email: "jack@je-it.com", 
        password: "password123",
+       error: false
     };
   },
   methods: {
@@ -39,6 +44,7 @@ export default {
       this.loginUser(user);
     },
   },
+  computed: mapState(['status'])
 };
 </script>
 

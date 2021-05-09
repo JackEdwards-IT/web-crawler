@@ -2,6 +2,10 @@ import axios from 'axios';
 
 const state = {
     token: localStorage.getItem("user-token") || "",
+    // Ensure axios auth header is set if token present (ie page refresh)
+    if(token){
+        axios.defaults.headers.common['Authorization'] = token;
+    },
     status: "",
     hasLoadedOnce: false
 };
@@ -13,25 +17,45 @@ const getters = {
 
 const actions = {
     // Login user
-    async loginUser({commit}, user) {
+    async loginUser({
+        commit
+    }, user) {
         try {
-            console.log("--logging user--\n" + JSON.stringify(user));
+            commit('loading');
             const response = await axios.post("http://localhost:3001/api/user/login", user);
-            console.log(response);
-            console.log("\n");
-            console.log(state);
-            
-            commit('test', response.data);
+            const token = response.data.token;
+            localStorage.setItem("user-token", token);
+            commit('setToken', token);
+            // set axios header
+            axios.defaults.headers.common['Authorization'] = token;
+
         } catch (error) {
-            console.log("--ERROR OCCURRED---");
-            console.log(error);
+            commit('error', error);
         }
+    },
+    async logout({commit}){
+        commit('logout');
+        console.log("commit logout called");
+        localStorage.removeItem("user-token");
+        delete axios.defaults.headers.common['Authorization'];
     }
 
 }
 
 const mutations = {
-    test: (state, token) => (state.token = token)
+    loading: (state) => (state.status = 'loading'),
+    success: (state) => (state.status = 'success'),
+    error: (state, error) => {
+        state.status = 'error';
+        console.log(error)
+    },
+
+    setToken: (state, token) => {
+        state.token = token;
+        state.status = 'success';
+        state.hasLoadedOnce = true;
+    },
+    logout: (state) => (state.token = "")
 }
 
 export default {
