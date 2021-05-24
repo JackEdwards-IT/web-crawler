@@ -19,7 +19,7 @@ Simple [Trello Board](https://trello.com/b/Rwrt0Uhr) to track progress.
 
 ## API
 
-Postman API doc [Postman](https://www.getpostman.com/collections/5744d8c9c9425fa406a2)
+Postman API doc [Postman](https://documenter.getpostman.com/view/15534217/TzXunKnv)
 
 Note API endpoint links are out of date.
 
